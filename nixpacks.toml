@@ -7,7 +7,8 @@ NIXPACKS_NODE_VERSION = "20"
 [phases.install]
 cmds = [
     "composer install --no-dev --optimize-autoloader --no-interaction",
-    "npm ci || npm install"
+    "npm install --include=optional",
+    "npm install @rolldown/binding-linux-x64-gnu @rollup/rollup-linux-x64-gnu || true"
 ]
 
 [phases.build]
